@@ -1,0 +1,219 @@
+/* -------------------------------------- */
+/* Keyframe Animations for different elements */
+/* -------------------------------------- */
+
+/* Applied to element with id "scroller" and 'showFromBelow' class. Used to bring choice selector 
+	into view on page load as well as add transition effect to te text displaying the color of the 
+	current earphones selected*/
+
+@keyframes slideFromBottom {
+	from{
+		transform: translateY(100%);
+	}
+
+	to{
+		transform: translateY(0);
+	}
+}
+
+/* Applied to 'addTransition' class. Used to slide image shown in earphone selector */
+@keyframes slideFromRight{
+	from{
+		transform: translateX(1%); 
+	}
+
+	to{
+		transform: translateX(0%);
+	}
+}
+
+/* -------------------------------------- */
+/* Filler classes for transition effects  */
+/* -------------------------------------- */
+
+.addTransition{
+	animation: 0.1s ease-in 0s 1 slideFromRight;
+}
+
+.showFromBelow{
+	animation: 0.25s linear 0s 1 slideFromBottom;	
+}
+
+
+
+/* -------------------------------------- */
+/* 		CSS For Different Elements        */
+/* -------------------------------------- */
+
+body{
+	padding:  0px;
+	margin:  0px;
+	background:  url("../images/loop-slide-rosegold.jpg") no-repeat fixed center;
+	background-size: cover;
+	transition: background 1s linear;
+	font-family: 'Montserrat';
+	font-weight: normal;
+}
+
+#container{
+	display: flex;
+}
+
+#imageInformation{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+
+#logo{
+	height: 25vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 15px;
+	margin-right: 25%;
+}
+
+#logo > h1{
+	font-size: 40px;
+}
+
+#logo > h3 > span{
+	font-weight: normal;
+}
+
+#empty{
+	height: 20vh;
+}
+
+
+#social{
+	margin-left: 12%;
+	height: 55vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#social > span{
+	transform-origin: bottom;
+	width: 0;
+	transform: rotate(90deg);
+}
+
+#scroller{
+	display: flex;
+	align-self: flex-end;
+	flex-direction: column;
+	background-color: white;
+	width: 45vw;
+	height: 80vh;
+	animation: 2s ease-in-out 0s 1 slideFromBottom;
+}
+
+#scroller > span{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 40%;
+}
+
+#imageNavigator{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 40%;
+}
+
+#buttonNavigator{
+	margin-top: -5%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.circle{
+	height: 8px;
+	width: 8px;
+	border:  2px solid;
+	border-radius: 50%;
+}
+
+.circle:nth-of-type(1){
+	border-color: #000000;
+}
+
+.circle:nth-of-type(2){
+	border-color: #E8D99B;
+}
+
+.circle:nth-of-type(3){
+	border-color: #EACFC1;
+}
+
+.circle:nth-of-type(4){
+	border-color: #D1D1D1;
+}
+
+.circle:nth-of-type(5){
+	border-color: #DD2D2D;
+}
+
+#scroller > span:nth-of-type(2){
+	margin-top: 15%;
+	height: 20%;
+	display: inline-flex;
+	background-color: black;
+	color: white;
+}
+
+#scroller > span:nth-of-type(2):hover{
+	background-color: #E8D99B;
+	color:  black;
+}
+
+#cost{
+	font-size: 30px;
+}
+
+
+.icon:hover{
+	cursor: pointer;
+}
+
+.fa-caret-left, .fa-caret-right{
+	display: inline-block;
+	padding:  0.2em 0.2em;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.fa-caret-left:hover, .fa-caret-right:hover{
+	background-color: rgba(0,0,0,0.1);
+}
+
+.giveMargin{
+	margin-left: 5%;
+}
+
+#roseGold{
+	color: #EACFC1;
+}
+
+
+@media only screen and (max-width: 768px;){
+	#scroller{
+		display: none;
+	}
+
+	body{
+		background-size: 100% 100%;
+	}
+
+	#imageInformation{
+		width: 100vh;
+		height: 100vh;
+	}
+}
